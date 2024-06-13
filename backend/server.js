@@ -11,6 +11,11 @@ import orderRouter from "./routes/orderRoute.js"
 const app = express()
 const port = 4000
 
+
+// middlewares
+app.use(express.json())
+app.use(cors())
+
 app.use(cors(
   {
     origin: ["https://tomato-backend-ten.vercel.app/"],
@@ -19,9 +24,6 @@ app.use(cors(
   }
 ))
 
-// middlewares
-app.use(express.json())
-app.use(cors())
 
 // db connection
 connectDB()
